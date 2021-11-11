@@ -1,4 +1,5 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const webpack = require('webpack');
@@ -30,9 +31,6 @@ module.exports = {
               presets: ['@babel/preset-env', 'babel-preset-react-app'],
             },
           },
-          {
-            loader: 'eslint-loader',
-          },
         ],
       },
       {
@@ -47,6 +45,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new ESLintPlugin(),
     new HtmlWebpackPlugin({
       title: 'Webpack Output',
     }),
