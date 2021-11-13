@@ -6,7 +6,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, './src/app.js'),
+    main: path.resolve(__dirname, './src/index.js'),
   },
   output: {
     filename: 'main.bundle.js',
@@ -16,8 +16,8 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'deploy'),
     },
-    compress: true,
     port: 9000,
+    historyApiFallback: true,
   },
   module: {
     rules: [
@@ -34,6 +34,10 @@ module.exports = {
         ],
       },
       {
+        test: /\.html$/i,
+        loader: 'html-loader',
+      },
+      {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
@@ -48,6 +52,7 @@ module.exports = {
     new ESLintPlugin(),
     new HtmlWebpackPlugin({
       title: 'Webpack Output',
+      template: './src/index.html',
     }),
   ],
 };
