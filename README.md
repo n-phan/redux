@@ -2,12 +2,21 @@
 
 Learning how to use redux
 
+## Note
+
+Using node v16.13.0
+Build by running `npm run build`
+Serve a development server on port 9000 by running `npm run dev`
+
 ### Production Dependencies
 
-| **Dependency** | **Use**                               |
-| -------------- | ------------------------------------- |
-| react          | React library                         |
-| redux          | Library for unidirectional data flows |
+| **Dependency**   | **Use**                                   |
+| ---------------- | ----------------------------------------- |
+| bootstrap        | CSS Framework                             |
+| react            | React library                             |
+| react-router     | React routing core functionality          |
+| react-router-dom | React web application library for routing |
+| redux            | Library for unidirectional data flows     |
 
 ### Development Dependencies
 
@@ -26,8 +35,9 @@ Learning how to use redux
 | eslint-plugin-prettier | Runs prettier as an ESLint rule and reports the differences.    |
 | eslint-plugin-react    | React specific linting rules for ESLint.                        |
 | eslint-webpack-plugin  | A plugin to find and fix issues in Javascript code.             |
+| html-loader            | Allows transpiling of HTML files using Babel and webpack.       |
 | html-webpack-plugin    | A plugin to simplify creating of HTML files to serve bundles.   |
 | style-loader           | Style loader module for webpack, injects CSS into the DOM.      |
 | webpack                | Module bundler, capable of transforming, bundling, packaging.   |
-| webpack-cli            | The official CLI of webpack.                                    |
-| webpack-dev-server     | Serve app via webpack, provides live reloading.                 |
+| webpack-cli            | Run Webpack via command line.                                   |
+| webpack-dev-server     | Serve app via Webpack, provides live reloading.                 |
