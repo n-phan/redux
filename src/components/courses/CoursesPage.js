@@ -43,7 +43,7 @@ function mapStateToProps(state) {
   return {
     authors: state.authors,
     courses:
-      state.authors.length === 0
+      state.courses.length === 0
         ? []
         : state.courses.map((course) => {
             return {
