@@ -38,6 +38,7 @@ Serve a development server on port 9000 by running `npm run dev`
 | html-loader            | Allows transpiling of HTML files using Babel and webpack.       |
 | html-webpack-plugin    | A plugin to simplify creating of HTML files to serve bundles.   |
 | json-server            | Create mock API that simulates create, update, delete           |
+| npm-run-all            | Display results of multiple commands on single command line     |
 | style-loader           | Style loader module for webpack, injects CSS into the DOM.      |
 | webpack                | Module bundler, capable of transforming, bundling, packaging.   |
 | webpack-cli            | Run Webpack via command line.                                   |
