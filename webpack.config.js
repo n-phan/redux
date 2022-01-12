@@ -48,6 +48,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env.API_URL': JSON.stringify('http://localhost:9001'),
+    }),
     new CleanWebpackPlugin(),
     new ESLintPlugin(),
     new HtmlWebpackPlugin({
