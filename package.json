@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env BABEL_ENV=development webpack serve --mode development",
-    "build": "cross-env BABEL_ENV=production webpack --mode production"
+    "build": "cross-env BABEL_ENV=production webpack --mode production",
+    "prestart:api": "node tools/createMockDb.js",
+    "start:api": "node tools/apiServer.js"
   },
   "repository": {
     "type": "git",
