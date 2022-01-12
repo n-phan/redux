@@ -17,6 +17,7 @@ Serve a development server on port 9000 by running `npm run dev`
 | react-router     | React routing core functionality          |
 | react-router-dom | React web application library for routing |
 | redux            | Library for unidirectional data flows     |
+| redux-thunk      | Async redux library                       |
 
 ### Development Dependencies
 
