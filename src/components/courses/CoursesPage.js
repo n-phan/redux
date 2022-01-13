@@ -1,12 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import * as authorActions from '../../redux/actions/authorActions';
 import * as courseActions from '../../redux/actions/courseActions';
 import CourseList from './CourseList';
 import PropTypes from 'prop-types';
 
 class CoursesPage extends React.Component {
+  state = {
+    navigateToAddCoursePage: false,
+  };
+
   componentDidMount() {
     const { actions, authors, courses } = this.props;
 
@@ -25,7 +30,16 @@ class CoursesPage extends React.Component {
   render() {
     return (
       <>
+        {this.state.navigateToAddCoursePage && <Navigate to="/course" />}
+
         <h2>Courses</h2>
+        <button
+          style={{ marginBotton: 20 }}
+          className="btn btn-primary add-course"
+          onClick={() => this.setState({ navigateToAddCoursePage: true })}
+        >
+          Add Course
+        </button>
         <CourseList courses={this.props.courses} />
       </>
     );
@@ -39,19 +53,18 @@ CoursesPage.propTypes = {
 };
 
 function mapStateToProps(state) {
-  /* eslint-disable indent */
+  // prettier-ignore
   return {
     authors: state.authors,
     courses:
       state.courses.length === 0
         ? []
         : state.courses.map((course) => {
-            return {
-              ...course,
-              authorName: state.authors.find((a) => a.id === course.authorId)
-                .name,
-            };
-          }),
+          return {
+            ...course,
+            authorName: state.authors.find((a) => a.id === course.authorId).name,
+          };
+        }),
   };
 }
 
